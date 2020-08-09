@@ -15,6 +15,7 @@ pipeline {
                  withAWS(region:'us-east-2',credentials:'aws-key1') {
                         sh 'echo "Uploading content with AWS creds"'
                         s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html',  bucket:'anu-udacity-project3', path:'.') 
+                        sh 'echo "Uploading completed with AWS creds"'
                     }
                  }
           }
